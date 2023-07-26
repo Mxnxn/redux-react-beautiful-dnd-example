@@ -6,6 +6,7 @@ import "./components/App/App.css";
 import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import dragReducer from "./components/store/reducers/drag";
+import { TASKS } from "./components/data/dummy-data";
 
 const rootReducer = combineReducers({
 	dragReducer: dragReducer,
@@ -14,7 +15,7 @@ const rootReducer = combineReducers({
 function loadFromLocal() {
 	try {
 		const state = localStorage.getItem("state");
-		if (state === null) return undefined;
+		if (state === null) return {dragReducer: TASKS};
 		return JSON.parse(state);
 	} catch (err) {
 		console.log(err);

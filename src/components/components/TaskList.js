@@ -7,10 +7,11 @@ const TaskList = ({ task, index }) => {
 			{(provided, snapshot) => {
 				return (
 					<div
-						className={snapshot.isDragging ? "task selected" : "task"}
+						className={`task ${snapshot.isDragging ? "selected" : ""}`}
 						{...provided.dragHandleProps}
 						{...provided.draggableProps}
 						ref={provided.innerRef}
+
 					>
 						{task.content}
 					</div>

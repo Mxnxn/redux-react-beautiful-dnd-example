@@ -1,4 +1,4 @@
-module.exports.TASKS = {
+module.exports.TASKS = Object.freeze({
 	tasks: {
 		task1: {
 			id: "task1",
@@ -44,14 +44,19 @@ module.exports.TASKS = {
 	columns: {
 		column1: {
 			id: "column1",
-			title: "To do",
+			title: "To Develop",
 			taskIds: ["task1", "task3", "task5", "task8", "task9", "task10"],
 		},
 		column2: {
 			id: "column2",
-			title: "Progress",
-			taskIds: ["task2", "task4", "task6", "task7"],
+			title: "Bug Fixes",
+			taskIds: ["task2", "task4", ],
+		},
+		column3: {
+			id: "column3",
+			title: "Push to Test",
+			taskIds: ["task6", "task7"],
 		},
 	},
-	order: ["column1", "column2"],
-};
+	order: ["column1", "column2","column3"],
+});
